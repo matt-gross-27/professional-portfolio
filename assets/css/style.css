@@ -1,0 +1,118 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  --cl1: rgb(255, 245, 238);
+  --cl2: rgb(255, 118, 101);
+  --cl3: rgb(134, 44, 39);
+  --bgsize: 275px;
+}
+
+body {
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  color: var(--cl3);
+  background: var(--cl1)
+}
+
+/* Header styles */
+header {
+  padding: 15px 35px;
+  background-image: url("../images/science.png");
+  background-size: var(--bgsize);
+  background-attachment: fixed;
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0;
+  z-index: 999;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+header h1 {
+  font-size: 36px;
+  font-weight: bold;
+  color: var(--cl1);
+  text-shadow: 0px 0px 10px rgb(10, 1, 14);
+}
+
+header nav {
+  margin: 7px 0;
+}
+
+header nav ul {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  align-items: center;
+  list-style: none;
+}
+
+header nav ul li a {
+  padding: 10px 20px;
+  font-weight: normal;
+  font-size: 22px;
+  text-shadow: 0px 0px 10px rgb(10, 1, 14);
+  color: var(--cl1);
+}
+
+header nav ul li a:hover {
+  background-color: var(--cl1);
+  color:var(--cl2);
+  border-radius: 15px;
+  text-shadow: none;
+}
+
+header a {
+  text-decoration: none;
+  color: var(--primary-color);
+}
+
+.hero {
+  background-attachment: fixed;
+  background-image: url("../images/science.png");
+  background-size: var(--bgsize);
+  background-attachment: fixed;
+  height: 200px;
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-end;
+  width: 100%;
+  margin: 0 auto;
+}
+
+.hero h2 {
+  margin: 0 55px 15px 0;
+  color: var(--cl1);
+  text-shadow: 0px 0px 10px rgb(10, 1, 14);
+}
+
+section {
+  margin: 50px auto;
+  width: 80%;
+  display: grid;
+  grid-template-columns: 150px 1fr;
+}
+
+.section-tittle {
+  margin-right: 20px;
+  padding-right: 10px;
+  border-right: 2px solid var(--cl2);
+  left: 0;
+}
+
+.section-tittle h2 {
+  font-size: 26px;
+  text-align: right;
+}
+
+#about p {
+  line-height: 1.5;
+}
+
+.section-content {
+  background-color: green;
+}
