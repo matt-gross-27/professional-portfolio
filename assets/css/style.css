@@ -169,7 +169,7 @@ section {
   background: linear-gradient( rgba(255, 245, 238, .3),rgba(255, 118, 101, .35));
   position: absolute;
   left: 0;
-  top:0;
+  top: 0;
   height: 100%;
   width: 100%;
   opacity: 0;
