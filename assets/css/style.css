@@ -49,6 +49,7 @@ header nav ul {
   justify-content: space-around;
   align-items: center;
   list-style: none;
+  height: 100%;
 }
 
 header nav ul li a {
@@ -95,12 +96,11 @@ header a {
 
 /* All Sections */
 section {
-  margin: 50px auto;
   width: 95%;
+  max-width: 1300px;
+  margin: 50px auto;
   display: grid;
   grid-template-columns: 130px 1fr;
-  max-width: 1300px;
-  margin-bottom: 75px;
 }
 
 .section-tittle {
@@ -123,25 +123,25 @@ section {
 /* About Section */
 #about .section-content {
   display: flex;
-}
-
-#about p {
-  line-height: 1.75;
-  text-align: justify;
-  flex: 1
+  align-items: flex-start;
 }
 
 .about-image {
-  aspect-ratio: 75%;
-  margin-right: 30px;
-  width: 40%;
+  width: 47.5%;
+  margin-right: 5%;
 }
 
 .about-image img {
-  border-radius: 15px;
   width: 100%;
+  height: 100%;
+  object-fit: scale-down;
 }
 
+#about p {
+  width: 47.5%;
+  line-height: 1.75;
+  text-align: justify;
+}
 
 /* Work Section */
 .work-grid {
@@ -163,12 +163,10 @@ section {
   overflow: hidden;
 }
 
-/*WIP*/
 .work-item::after {
   content: "";
   background: linear-gradient( rgba(255, 245, 238, .3),rgba(255, 118, 101, .3));
   position: absolute;
-  top: 0;
   left: 0;
   height: 100%;
   width: 100%;
@@ -232,12 +230,14 @@ section {
 }
 
 /* Contact Section */
+
 .contact-links ul {
   display: flex;
   justify-content: space-around;
   align-items: center;
   list-style: none;
   flex-wrap: wrap;
+  height: 100%;
 }
 
 .contact-links ul li a {
@@ -246,6 +246,7 @@ section {
   line-height: 1.5;
   font-size: 18px;
   color: var(--cl2);
+  text-decoration: none;
 }
 
 .contact-links ul li a:hover {
@@ -254,7 +255,186 @@ section {
   border-radius: 15px;
 }
 
-.contact-links a {
-  text-decoration: none;
-  color: var(--primary-color);
+/* MEDIA QUERIES BEGIN*/
+/* Fix about section as it shrinks */
+
+@media screen and (max-width: 1130px) {
+  #about p {
+    line-height: 1.2;
+  }
 }
+
+/* MEDIA QUERIES 980px*/
+@media screen and (max-width: 980px) {
+  header {
+    padding-bottom: 0;
+    justify-content: center;
+    position: relative;
+  }
+
+  header h1 {
+    width:95%;
+    text-align: center;
+  }
+
+  header nav ul {
+    margin-top: 5px;
+    width: 100%;
+    justify-content: center;
+  }
+
+  section {
+    width: 100%;
+    grid-template-columns: 92px 1fr;
+    margin-right: 5px;
+  }
+
+  .section-tittle {
+    padding-right: 5px;
+    padding-left: 0;
+    margin-left: 5px;
+  }
+
+  .section-content {
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+
+  .section-tittle h2 {
+    font-size: 18px;
+  }
+
+  #about .section-content {
+    display: block;
+  }
+
+  .about-image {
+    display: inline;
+    float: left;
+    min-width: 200px;
+    max-width: 50%;
+  }
+
+  #about p {
+    display: inline;
+  }
+
+  .contact-links ul li a {
+    font-size: 14px;
+  }
+}
+
+/* MEDIA QUERY FOR 830px */
+@media screen and (max-width: 830px) {
+
+  section {
+    display: block;
+  }
+  
+  .section-tittle {
+    margin: 25px auto;
+    width: 75%;
+    border-right: none;
+    font-size: 22px;
+    border-bottom: 2px solid var(--cl3);
+  }
+
+  .section-tittle h2 {
+    text-align: center;
+    padding-bottom: 8px;
+  }
+
+  .hero {
+    height: 100px;
+  }
+
+
+  #about .section-content {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: none;
+    padding: none;
+  }
+  .about-image {
+    max-width: 420px;
+    min-width: 80%;
+    width:80%;
+    padding: 0;
+    margin-right: 0;
+  }
+
+  #about img {
+    width: 100%;
+  }
+  
+  #about p {
+    padding-top: 20px;
+    text-align: justify;
+    max-width: 420px;
+    min-width: 80%;
+    width:80%;
+  }
+}
+
+/* MEDIA QUERY FOR 540px */
+@media screen and (max-width: 540px) {
+
+  .hero {
+    justify-content: center;
+  }
+
+  .hero h2 {
+    margin: 0 0 15px 0;   
+  }
+
+  .section-tittle h2 {
+    font-size: 24px;
+  }
+
+  .about-image {
+    min-width: 100%;
+    width:100%;
+  }
+
+  
+  #about p {
+    min-width: 100%;
+    width:100%;
+  }
+
+  .work-grid {
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(7, 300px);
+  }
+
+  .work-item {
+    padding-bottom: 0;
+  }
+
+  #work-item-1 {
+    grid-row: 1 / 3;
+    grid-column: 1/ 2;
+  }
+
+  .work-item-title {
+    opacity: 1;
+    left: 0;
+    width: 100%;
+    height: 65px;
+    border-radius: 0 0 15px 15px;
+  }
+
+  .work-item-title h3 {
+    font-size: 16px;
+    text-align: center;
+    margin-top: 10px;
+  }
+
+  .work-item::after {
+    display: none;
+  }
+}
+
